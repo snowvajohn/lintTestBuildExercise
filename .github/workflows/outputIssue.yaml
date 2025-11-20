@@ -1,0 +1,14 @@
+name: LintTestBuild
+on:
+  issues:
+    types: opened
+
+jobs:
+  explainDetails:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: read
+    steps:
+      - name: explain issue details
+        run: echo "This issue was opened. Title -> ${ { toJSON(github.event.issue.title) } Description -> ${ { toJSON(github.event.issue.body) } }"
+      
