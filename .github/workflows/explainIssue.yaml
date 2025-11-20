@@ -10,5 +10,5 @@ jobs:
       issues: read
     steps:
       - name: explain issue details
-        run: echo "This issue was opened. Title -> ${ { toJSON(github.event.issue.title) } Description -> ${ { toJSON(github.event.issue.body) } }"
+        run: echo "This issue was opened. Title -> ${ { github.event.issue.title } Description -> ${ { github.event.issue.body } }"
       
